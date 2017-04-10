@@ -8,9 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.niit.ShoppingCartBackend.DAO.ProductDAO;
-
 import com.niit.ShoppingCartBackend.Model.Product;
 
 @Controller
@@ -20,10 +20,11 @@ public class ProductController {
 	private ProductDAO productDAO;
 	
 	@RequestMapping("addProduct")
-	public String addProduct(@ModelAttribute Product product){
+	public String addProduct(@ModelAttribute Product product, @RequestParam("file") MultipartFile file){
 		productDAO.saveOrUpdate(product);
+		String path = "E://PROJECT/new project/ShoppingKartFront/src/main/webapp/WEB-INF/resources/images/products/";
+		FileUtil.upload(path, file, product.getProductid()+".jpg");
 		return "redirect:viewProduct";
-		
 	}
 	@RequestMapping("viewProduct")
 	public String viewProducts(Model model){
@@ -31,7 +32,7 @@ public class ProductController {
 		List<Product> productList = productDAO.list();
 		model.addAttribute("productList", productList);
 		model.addAttribute("viewProductClicked", true);
-		return "Adminsignin";
+		return "Adminsignin";   
 
 
 }

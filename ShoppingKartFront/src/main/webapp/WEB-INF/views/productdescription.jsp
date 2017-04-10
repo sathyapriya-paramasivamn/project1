@@ -7,15 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="addCategory" >
-<table align="center">
- <tr><td> categoryname:</td>
-  <td><input type="text" name="categoryName"></td></tr>
-  <tr><td>categorydetails:</td>
-<td>  <input type="text" name="description"></td></tr>
-<tr><td>  <input type="submit" name="submit" value="new category"></td></tr>
-</table>
-</form>
-
+<img src="resources/images/products/${product.productid}.jpg">
 </body>
-</html> 
+</html>

@@ -11,29 +11,35 @@
 <body>
 <fieldset>
 <legend>Product</legend>
-  <form action="addProduct" method="post">
-  product Name:
-  <input class="form-control" type="text" name="productName"><br>
-  Product Description:
-  <input class="form-control" type="text" name="productdescription"><br>
+   <form action="addProduct" method="post" enctype="multipart/form-data">
+   <table align="center" >
    
-   Category:<select name="category">
+  <tr><td>product Name:</td>
+  <td><input class="form-control" type="text" name="productName"></td></tr>
+ <tr><td> Product Description:</td>
+ <td><input class="form-control" type="text" name="productdescription"></td></tr>
+ <tr><td>  Category:</td><td><select name="category">
    <option value="">select your category</option>
    	<c:forEach items="${categoryList}" var="category">
 <option value="${category.categoryName}">${category.categoryName}</option>
 </c:forEach>
-</select><br>
-Supplier:<select name="supplier">
+</select></td></tr>
+<tr><td>Supplier:</td><td><select name="supplier">
    <option value="">select your supplier</option>
    <c:forEach items="${supplierList}" var="supplier">	
    <option value="${supplier.name}">${supplier.name}</option>
    </c:forEach>
-</select><br>
-Price:
-<input class="form-control" type="text" name="price"><br>
-stock:
-<input class="form-control" type="text" name="Stock"><br>
-<input type="submit" name="submit" value="new product">
+</select></td></tr>
+<tr><td>Price:</td><td>
+<input class="form-control" type="text" name="price"></td></tr>
+<tr><td>stock:</td><td>
+<input class="form-control" type="text" name="Stock"></td></tr>
+<tr><td>file to upload:</td><td>
+<input class="form-control" type="file" name="file"></td></tr>
+
+<tr><td><input type="submit" name="submit" value="new product"></td></tr>
+
+</table>
 </form>
 </fieldset>
 </body>

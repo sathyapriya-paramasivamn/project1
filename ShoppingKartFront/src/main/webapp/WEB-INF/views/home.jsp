@@ -42,7 +42,7 @@ html, body {
 
 <%@include file="/WEB-INF/views/Menu.jsp" %> 
  <%@include file="/WEB-INF/views/carousel.jsp" %>
- 
+  
   <c:choose>
      <c:when test="${not empty loginButtonClicked}">    
      
@@ -54,171 +54,10 @@ html, body {
     <%@include file="/WEB-INF/views/signup.jsp" %>
      </c:when>
      
-     <c:otherwise>HAi</c:otherwise>
+     <c:otherwise><%@include file="/WEB-INF/views/productList.jsp" %>
+     </c:otherwise>
      </c:choose> 
       
-<fieldset>
-<legend>LEHANGA</legend>
-<table>
-<tr>
-<th>
-<div class="img">
-<div class="imgBox">
-    <img src="resources/images/lehanga1.jpg" height="200" width="200" />
-    <p>This is image 1</p>
-  </div></div></th>
-  <th><div class="img"><div class="imgBox">
-    <img class="middle-img" src="resources/images/lehanga10.jpg"/ height="200" width="200" />
-    <p>This is image 2</p>
-  </div></div></th>
-  <th>
-  <div class="img"><div class="imgBox">
-    <img src="resources/images/lehanga11.jpg" height="200" width="200" />
-    <p>This is image 3</p>
-  </div></th>
-<th><div class="img"><div class="imgBox">
-    <img src="resources/images/lehanga13.jpg" height="200" width="200" />
-    <p>This is image 3</p>
-  </div></th>
-  <th><div class="img"><div class="imgBox">
-    <img src="resources/images/lehanga2.jpg" height="200" width="200" />
-    <p>This is image 3</p>
-  </div></div></th>
-</tr>
-</div>
-<tr>
-<td><div class="img"><div class="imgBox">
-    <img src="resources/images/lehanga23.jpg" height="200" width="200" />
-    <p>This is image 1</p>
-  </div></div></td>
-<td>  <div class="img"><div class="imgBox">
-    <img class="middle-img" src="resources/images/lehanga4.jpg"/ height="200" width="200" />
-    <p>This is image 2</p>
-  </div></div></td>
-<td>  <div class="img"><div class="imgBox">
-    <img src="resources/images/lehanga5.jpg" height="200" width="200" />
-    <p>This is image 3</p>
-  </div></div></td>
-<td><div class="img"><div class="imgBox">
-    <img src="resources/images/lehanga6.jpg" height="200" width="200" />
-    <p>This is image 3</p>
-  </div></div></td>
-<td><div class="img"><div class="imgBox">
-    <img src="resources/images/lehanga7.jpg" height="200" width="200" />
-    <p>This is image 3</p>
-  </div></div></td></tr>
-  </table>
-</div>
-</div>
-</fieldset>
-<fieldset>
-<legend>LEHANGA</legend>
-<table>
-<tr>
-<th>
-<div class="img">
-<div class="imgBox">
-    <img src="resources/images/lehanga1.jpg" height="200" width="200" />
-    <p>This is image 1</p>
-  </div></div></th>
-  <th><div class="img"><div class="imgBox">
-    <img class="middle-img" src="resources/images/lehanga10.jpg"/ height="200" width="200" />
-    <p>This is image 2</p>
-  </div></div></th>
-  <th>
-  <div class="img"><div class="imgBox">
-    <img src="resources/images/lehanga11.jpg" height="200" width="200" />
-    <p>This is image 3</p>
-  </div></th>
-<th><div class="img"><div class="imgBox">
-    <img src="resources/images/lehanga13.jpg" height="200" width="200" />
-    <p>This is image 3</p>
-  </div></th>
-  <th><div class="img"><div class="imgBox">
-    <img src="resources/images/lehanga2.jpg" height="200" width="200" />
-    <p>This is image 3</p>
-  </div></div></th>
-</tr>
-</div>
-<tr>
-<td><div class="img"><div class="imgBox">
-    <img src="resources/images/lehanga23.jpg" height="200" width="200" />
-    <p>This is image 1</p>
-  </div></div></td>
-<td>  <div class="img"><div class="imgBox">
-    <img class="middle-img" src="resources/images/lehanga4.jpg"/ height="200" width="200" />
-    <p>This is image 2</p>
-  </div></div></td>
-<td>  <div class="img"><div class="imgBox">
-    <img src="resources/images/lehanga5.jpg" height="200" width="200" />
-    <p>This is image 3</p>
-  </div></div></td>
-<td><div class="img"><div class="imgBox">
-    <img src="resources/images/lehanga6.jpg" height="200" width="200" />
-    <p>This is image 3</p>
-  </div></div></td>
-<td><div class="img"><div class="imgBox">
-    <img src="resources/images/lehanga7.jpg" height="200" width="200" />
-    <p>This is image 3</p>
-  </div></div></td></tr>
-  </table>
-</div>
-</div>
-</fieldset>
-<fieldset>
-<legend>LEHANGA</legend>
-<table>
-<tr>
-<th>
-<div class="img">
-<div class="imgBox">
-    <img src="resources/images/lehanga1.jpg" height="200" width="200" />
-    <p></p>
-  </div></div></th>
-  <th><div class="img"><div class="imgBox">
-    <img class="middle-img" src="resources/images/lehanga10.jpg"/ height="200" width="200" />
-    <p>This is image 2</p>
-  </div></div></th>
-  <th>
-  <div class="img"><div class="imgBox">
-    <img src="resources/images/lehanga11.jpg" height="200" width="200" />
-    <p>This is image 3</p>
-  </div></th>
-<th><div class="img"><div class="imgBox">
-    <img src="resources/images/lehanga13.jpg" height="200" width="200" />
-    <p>This is image 3</p>
-  </div></th>
-  <th><div class="img"><div class="imgBox">
-    <img src="resources/images/lehanga2.jpg" height="200" width="200" />
-    <p>This is image 3</p>
-  </div></div></th>
-</tr>
-</div>
-<tr>
-<td><div class="img"><div class="imgBox">
-    <img src="resources/images/lehanga23.jpg" height="200" width="200" />
-    <p>This is image 1</p>
-  </div></div></td>
-<td>  <div class="img"><div class="imgBox">
-    <img class="middle-img" src="resources/images/lehanga4.jpg"/ height="200" width="200" />
-    <p>This is image 2</p>
-  </div></div></td>
-<td>  <div class="img"><div class="imgBox">
-    <img src="resources/images/lehanga5.jpg" height="200" width="200" />
-    <p>This is image 3</p>
-  </div></div></td>
-<td><div class="img"><div class="imgBox">
-    <img src="resources/images/lehanga6.jpg" height="200" width="200" />
-    <p>This is image 3</p>
-  </div></div></td>
-<td><div class="img"><div class="imgBox">
-    <img src="resources/images/lehanga7.jpg" height="200" width="200" />
-    <p>This is image 3</p>
-  </div></div></td></tr>
-  </table>
-</div>
-</div>
-</fieldset>
 
  
 </body>

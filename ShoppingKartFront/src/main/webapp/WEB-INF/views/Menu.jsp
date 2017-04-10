@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -10,7 +11,7 @@
 
 header {
   height: 70px;
-  width: 100%;
+  width: 10%;
   position: absolute;
   top: 0px;
   background-color:;
@@ -76,9 +77,9 @@ div.container
 {
         
 font-family: Raleway;
-    margin: 0 auto;
+margin: 0 auto;
 padding: 1em 2em;
- text-align:right;
+ text-align:left;
 }
 div.container a
 {
@@ -171,7 +172,7 @@ div.topLeftBorders a:hover:after
 <div class="container">
 <div>
 
-   <li><a href="home">Home</a></li>
+   <li> <a href="home">Home</a> </li>
    <li><a href="trends">TRENDS</a></li>
 <li><a href="t2cu" >T2CYOU</a></li>   
 <li><a href="brands">BRANDS</a></li>
@@ -179,10 +180,16 @@ div.topLeftBorders a:hover:after
     <li class="dropdown"><div class="dropdown">
   <a href="javascript:void(0)" class="dropbtn">MYACCOUNT</button>
   <div class="dropdown-content">
+     <c:if test="${pageContext.request.userPrincipal.name == null }">
       <a href="signin" >SIGNIN</a>
       <a href="newUser" >SIGNUP</a>
+      </c:if>
+      <c:if test="${pageContext.request.userPrincipal.name != null }">
+      <a href="j_spring_security_logout">SIGNOUT</a>
+       </c:if>
   </div>
- 
+</a>
+<li>Welcome ${pageContext.request.userPrincipal.name}</li>
 </div>
 </li>
 </ul>

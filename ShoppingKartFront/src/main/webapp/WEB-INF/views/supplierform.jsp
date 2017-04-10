@@ -13,13 +13,15 @@
 <fieldset>
 <legend> supplier</legend>
 <form action="addSupplier">
-  name:<br>
-  <input type="text" name="name"><br>
-   phoneNo:<br>
-  <input type="text" name="phoneNo"><br>
-  emailId:<br><input type="text" name="emailId"><br>
- address:<br><input type="text" name="address"><br>
-  <input type="submit" name="submit" value="new supplier">
+<table align="center" >
+<tr><td>  name:</td>
+ <td> <input type="text" name="name"></td></tr>
+<tr><td>   phoneNo:</td>
+  <td><input type="text" name="phoneNo"></td></tr>
+  <tr><td>  emailId:</td><td><input type="text" name="emailId"></td></tr>
+  <tr><td> address:</td><td><input type="text" name="address"></td></tr>
+  <tr><td><input type="submit" name="submit" value="new supplier"></td></tr>
+  </table>
 </form>
 </fieldset>
 </body>
