@@ -16,11 +16,21 @@ public class Shipping {
 	private String shippingid; 
 	private String userid;
 	private String username;
-	private String productid;
+	
 	
 	private String phoneNo;
-	private String emailid;
-	private String adress;
+	private String mailid;
+	private String address;
+	public String getMailid() {
+		return mailid;
+	}
+	public void setMailid(String mailid) {
+		this.mailid = mailid;
+	}
+	public void setShippingid(String shippingid) {
+		this.shippingid = shippingid;
+	}
+	
 	public String getUserid() {
 		return userid;
 	}
@@ -41,29 +51,20 @@ public class Shipping {
 	public void setShippingId(String shippingid) {
 		this.shippingid = shippingid;
 	}
-	public String getProductid() {
-		return productid;
-	}
-	public void setProductid(String productid) {
-		this.productid = productid;
-	}
+	
 	public String getPhoneNo() {
 		return phoneNo;
 	}
 	public void setPhoneNo(String phoneNo) {
 		this.phoneNo = phoneNo;
 	}
-	public String getEmailid() {
-		return emailid;
+	public String getAddress() {
+		return address;
 	}
-	public void setEmailid(String emailid) {
-		this.emailid = emailid;
+	public void setAddress(String address) {
+		this.address = address;
 	}
-	public String getAdress() {
-		return adress;
-	}
-	public void setAdress(String adress) {
-		this.adress = adress;
-	}
+	
+	
 	
 }

@@ -45,7 +45,6 @@ public CartDAOImpl(SessionFactory sessionFactory) {
 	public void saveOrUpdate(Cart cart) {
 	sessionFactory.getCurrentSession().saveOrUpdate(cart);
 
-
 	}
 @Transactional
 	public void delete(String cartid) {
@@ -54,6 +53,13 @@ public CartDAOImpl(SessionFactory sessionFactory) {
 	sessionFactory.getCurrentSession().delete(cartToDelete);
 
 }
-
+@Transactional
+public List<Cart> list(String mailid) {
+	String hql = "from Cart where mailid=" + "'" + mailid + "'   and status = " + "'N'";
+	Query query = sessionFactory.getCurrentSession().createQuery(hql);
+	@SuppressWarnings("unchecked")
+	List<Cart> list = (List<Cart>) query.list();
+	
+	return list;
+}
 	}
-

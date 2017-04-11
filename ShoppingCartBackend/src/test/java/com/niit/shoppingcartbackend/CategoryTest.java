@@ -77,17 +77,17 @@ public class CategoryTest {
 		supplier.setPhoneNo(998822346);
 		
 		cart.setProductName("handwork");
-		cart.setQuantity("2");
-		cart.setStatus("waiting for delivery");
-		cart.setPrice("1000");
-		cart.setTotal("2000");
-		cart.setDays("3");
+		cart.setQuantity(2);
+		cart.setStatus("N");
+		cart.setPrice(1000);
+		cart.setTotal(2000);
+		cart.setDays(3);
 		cart.setUsername("sathya");
 		
-		shipping.setUsername("sathya");
-		shipping.setEmailid("sathya23@gmaill.com");
+		shipping.setUsername("sara");
+		shipping.setMailid("sara23@gmaill.com");
 		shipping.setPhoneNo("9876543212");
-        shipping.setAdress("12,ramstreet,pollachi");
+        shipping.setAddress("12,ramnagar,pollachi");
 		
 		
 		categoryDAO.saveOrUpdate(category);

@@ -31,6 +31,8 @@ public class Product {
 	
 	private int price;
 	
+	
+
 	private int Stock;
 	@Transient
 	private MultipartFile image;
@@ -84,7 +86,6 @@ public class Product {
 	public void setSupplier(String supplier) {
 		this.supplier = supplier;
 	}
-
 	public int getPrice() {
 		return price;
 	}

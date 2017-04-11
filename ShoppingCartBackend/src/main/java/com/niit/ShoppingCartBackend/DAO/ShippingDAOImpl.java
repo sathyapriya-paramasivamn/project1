@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.niit.ShoppingCartBackend.Model.Shipping;
+import com.niit.ShoppingCartBackend.Model.User;
 @Repository("ShippingDAO")
 public class ShippingDAOImpl implements ShippingDAO {
 	@Autowired
@@ -24,7 +25,7 @@ public class ShippingDAOImpl implements ShippingDAO {
 	@SuppressWarnings("unchecked")
 	List<Shipping> listShipping = (List<Shipping>) sessionFactory.getCurrentSession().createCriteria(Shipping.class)
 	.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
-		return listShipping;
+		return listShipping;  
 	}
 	@Transactional
 	public Shipping get(String shippingid) {
@@ -49,10 +50,25 @@ public class ShippingDAOImpl implements ShippingDAO {
 		shippingToDelete.setShippingId(shippingid);
 		sessionFactory.getCurrentSession().delete(shippingToDelete);
 		
+	}
+	
+	public Shipping getBy(String emailid) {
+		String hql = "from Shipping where emailid ='" + emailid + "'";
+		Query query = (Query) sessionFactory.getCurrentSession().createQuery(hql);
+		@SuppressWarnings("unchecked")
+		List<Shipping> listShipping = (List<Shipping>) (query).list();
 
-
-
-
+		if (listShipping != null && !listShipping.isEmpty()) {
+			return listShipping.get(0);
+		}
+		return null;
+	}
+	public List<Shipping> getMailid(String mailid) {
+		String hql = "from User where mailid ='" + mailid + "'";
+		Query query = (Query) sessionFactory.getCurrentSession().createQuery(hql);
+	
+		List<Shipping> list = (List<Shipping>) (query).list();
+		return null;
 	}
 
 }
