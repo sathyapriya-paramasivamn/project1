@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<style>
+<!-- <style>
 <link ref="text/stylesheet">
 /* @keyframes slidy {
 0% { left: 0%; }
@@ -94,7 +94,7 @@ body {font-family: Verdana,sans-serif;margin:0}
   cursor:pointer;
   height: 13px;
   width: 13px;
-  margin: 0 2px;
+  margin-top:2px;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
@@ -156,19 +156,13 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 </script>
-
+ -->
 </head>
 <body>
 <%@include file="/WEB-INF/views/Menu.jsp" %>
 
-<!-- <div id="slider">
 
-<img src="resources/images/SA.jpg" >
-<img src="resources/images/SD.jpg" >
-<img src="resources/images/l1.jpg" >
-
-</div> -->
-
+<!-- 
 <div class="slideshow-container">
 
 <div class="mySlides fade">
@@ -199,12 +193,14 @@ function showSlides(n) {
   <span class="dot" onclick="currentSlide(1)"></span> 
   <span class="dot" onclick="currentSlide(2)"></span> 
   <span class="dot" onclick="currentSlide(3)"></span> 
-</div>
+</div> -->
 <c:choose>
 <c:when test="${not empty productdescription}">
    <%@include file="/WEB-INF/views/productdescription.jsp" %>
 </c:when>
-
+<c:when test="${not empty myKartClicked}">
+   <%@include file="/WEB-INF/views/mycart.jsp" %>
+</c:when>
 <c:otherwise><%@include file="/WEB-INF/views/productList.jsp" %>
      </c:otherwise>
 </c:choose>

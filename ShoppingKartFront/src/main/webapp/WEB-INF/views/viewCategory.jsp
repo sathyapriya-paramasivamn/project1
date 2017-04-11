@@ -9,7 +9,7 @@
 </head>
 <body>
 <center>List Of Category</center>
-<table>
+<table cellspacing="10">
 <tr>
 <th>S.No</th>
 <th>Category id</th>

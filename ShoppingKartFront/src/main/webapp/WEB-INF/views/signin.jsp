@@ -290,7 +290,7 @@ $input.blur(function (e) {
     
     <fieldset class="form-fieldset ui-input __second">
       <input type="password" name="password" />
-      <label for="repeat-new-password">
+      <label for="password">
         <span >Password</span>
       </label>
     </fieldset>

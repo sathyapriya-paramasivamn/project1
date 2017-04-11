@@ -11,8 +11,8 @@
 
 li a, .dropbtn {
     display: inline-block;
-    color:#FF4081;
-    text-align: center;
+    color:#E0E0E0;
+    text-align:center;
     padding: 14px 16px;
     text-decoration: none;
 }
@@ -32,7 +32,7 @@ li.dropdown {
 }
 .dropdown-content a {
     color:#E0E0E0;
-   padding: 12px 16px;
+    padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: left;
@@ -106,7 +106,7 @@ li.dropdown {
 <c:otherwise>
 <br>
 <br>
-WELCOME ADMIN!!
+WELCOME ADMIN!!s
 </c:otherwise>
 </c:choose>
 </body>

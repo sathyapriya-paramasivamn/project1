@@ -13,7 +13,7 @@
 <fieldset>
 <legend> supplier</legend>
 <form action="addSupplier">
-<table align="center" >
+<table align="center"  cellspacing="10">
 <tr><td>  name:</td>
  <td> <input type="text" name="name"></td></tr>
 <tr><td>   phoneNo:</td>

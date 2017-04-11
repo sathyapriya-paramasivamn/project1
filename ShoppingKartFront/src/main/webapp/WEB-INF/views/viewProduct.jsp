@@ -8,7 +8,7 @@
 </head>
 <body>
 <center>List Of Products</center>
-<table>
+<table cellspacing="10">
 <tr>
 <th>S.No</th>
 <th>Product id</th>

@@ -3,7 +3,6 @@ package com.niit.shoppingkartfront.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
-
 import com.niit.ShoppingCartBackend.DAO.ShippingDAO;
 import com.niit.ShoppingCartBackend.Model.Shipping;
 
@@ -18,5 +17,13 @@ public String addShipping(@ModelAttribute Shipping shipping){
 		
 		return "viewproduct";
 		}
+/*@RequestMapping("proceed")
+public String proceed(Principal p, Model model)
+{
+
 	
+	return null;		
+	
+}*/
 }
+  
