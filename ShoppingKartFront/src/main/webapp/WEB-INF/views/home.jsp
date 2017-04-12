@@ -57,8 +57,9 @@ html, body {
      <c:otherwise><%@include file="/WEB-INF/views/productList.jsp" %>
      </c:otherwise>
      </c:choose> 
-      
-
+      <br>
+      <br>
+<%-- <%@include file="/WEB-INF/views/footer.jsp" %>  --%>
  
 </body>
 </html>

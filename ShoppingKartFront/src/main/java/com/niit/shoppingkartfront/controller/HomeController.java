@@ -81,6 +81,12 @@ public class HomeController {
 		return "home";
 	}
 	
+	@RequestMapping("signup")  
+	public String signup(Model model){
+		model.addAttribute("signupButtonClicked", true);
+		return "home";
+	}
+	
 	@RequestMapping("/loginpage")
 	public ModelAndView loginpage(@RequestParam(value = "error", required = false) String error, 
 			@RequestParam(value = "logout", required = false) String logout, Model model) {

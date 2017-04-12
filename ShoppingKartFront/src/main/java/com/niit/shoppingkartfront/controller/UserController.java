@@ -9,11 +9,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.niit.ShoppingCartBackend.DAO.BillingDAO;
 import com.niit.ShoppingCartBackend.DAO.ProductDAO;
 import com.niit.ShoppingCartBackend.DAO.RoleDAO;
+import com.niit.ShoppingCartBackend.DAO.ShippingDAO;
 import com.niit.ShoppingCartBackend.DAO.UserDAO;
+import com.niit.ShoppingCartBackend.Model.Billing;
 import com.niit.ShoppingCartBackend.Model.Product;
 import com.niit.ShoppingCartBackend.Model.Role;
+import com.niit.ShoppingCartBackend.Model.Shipping;
 import com.niit.ShoppingCartBackend.Model.User;
 
 @Controller
@@ -27,12 +31,19 @@ public class UserController {
 	
 	@Autowired
 	private Role role;
+	
 	@Autowired
 	private ProductDAO productDAO;
 	
+	@Autowired
+	private ShippingDAO shippingDAO;
+	
+	@Autowired
+	private BillingDAO billingDAO;
+	
 
 	@RequestMapping("addUser")
-	public String addCategory(@ModelAttribute User user){
+	public String addCategory(@ModelAttribute User user, @ModelAttribute Shipping shipping, @ModelAttribute Billing billing, Model model){
 		
 		user.setEnabled(true);
 		role.setMailid(user.getMailid());
@@ -45,7 +56,15 @@ public class UserController {
 		userDAO.saveOrUpdate(user);
 		roleDAO.saveOrUpdate(role);
 		
-		return "Usersignin";
+		shipping.setUserid(user.getUserid());
+		shippingDAO.saveOrUpdate(shipping);
+		
+		billing.setUserid(user.getUserid());
+		billingDAO.saveOrUpdate(billing);
+		
+		model.addAttribute("loginButtonClicked", true);
+		model.addAttribute("message", "Regieted");
+		return "home";
 }
 	
 	@RequestMapping("/afterlogin")

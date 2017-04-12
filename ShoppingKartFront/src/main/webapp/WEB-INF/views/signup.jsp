@@ -46,14 +46,14 @@ h2 {
   color: rgba(255, 255, 255, .4);
 }
 
-.container {
+/*  .container {
   max-width: 320px;
   margin: 0 auto;
   padding: 20px 16px 40px 16px;
   
   text-align: center;
 }
-
+ */
 .form-footer {
   margin-top: 1em;
 }
@@ -273,14 +273,15 @@ $input.blur(function (e) {
   $(this).toggleClass('filled', !!$(this).val());
 });
 
+
 </script>
 </head>
 <body>
 
-<div class="container" >
+<!-- <div class="container" > -->
   <h1>fabcollection</h1>
   
-  <form action="addUser" method="post">    
+  <form action="addUser"  style="width: 250px" method="post">    
     <fieldset class="form-fieldset ui-input __first">
       <input type="text" name="username" tabindex="0" />
       <label for="username">
@@ -322,6 +323,6 @@ $input.blur(function (e) {
     </div>
     </div>
   </form>
-</div>
+<!-- </div> -->
 </body>
 </html>

@@ -30,13 +30,11 @@
 </tr>
 </c:forEach>
 <tr>
-<td><a href="proced"><button>proced delivery</button></a>
+<td><a href="proceed"><button>proceddelivery</button></a>
 </td>
 <td><a href="#"><button>grand total</button></a>
 </td>
 </tr>
 </table>
-
-
 </body>
 </html>
