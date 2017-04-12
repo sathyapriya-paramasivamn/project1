@@ -26,6 +26,7 @@ import com.niit.ShoppingCartBackend.DAO.SupplierDAO;
 import com.niit.ShoppingCartBackend.DAO.SupplierDAOImpl;
 import com.niit.ShoppingCartBackend.DAO.UserDAO;
 import com.niit.ShoppingCartBackend.DAO.UserDAOImpl;
+import com.niit.ShoppingCartBackend.Model.Billing;
 import com.niit.ShoppingCartBackend.Model.Cart;
 import com.niit.ShoppingCartBackend.Model.Category;
 import com.niit.ShoppingCartBackend.Model.Product;
@@ -75,7 +76,8 @@ public class ApplicationContextConfig {
 		sessionBuilder.addAnnotatedClass(Cart.class);
 		sessionBuilder.addAnnotatedClass(Supplier.class);
 		sessionBuilder.addAnnotatedClass(Role.class);
-		sessionBuilder.addAnnotatedClass(Shipping.class)
+		sessionBuilder.addAnnotatedClass(Shipping.class);
+		sessionBuilder.addAnnotatedClass(Billing.class)
 ;		return sessionBuilder.buildSessionFactory();
 	}
 	@Autowired
