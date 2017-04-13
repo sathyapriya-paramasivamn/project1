@@ -15,7 +15,7 @@ Id:<br>
   name:<br>
   <input type="text" name="name" value="${supplier.name}"><br>
    phoneNo:<br>
-  <input type="text" name="phoneNo" value="${supplier.phoneNo}"><br>
+  <input type="text" name="mobileno" value="${supplier.mobileno}"><br>
   emailId:<br><input type="text" name="emailId"  value="${supplier.emailId}"><br>
  address:<br><input type="text" name="address" value="${supplier.address}"><br>
   <input type="submit" name="submit">

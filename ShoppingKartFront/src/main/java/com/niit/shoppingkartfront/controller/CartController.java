@@ -34,26 +34,52 @@ public class CartController {
 
 	@RequestMapping("addToCart")
 	public String addToCart(@RequestParam("productId") String productid ,Principal p, Model model){
+		
 		Product product = productDAO.get(productid);
-		User user = userDAO.getByMailId(p.getName());
+		User user = userDAO.getByMailId(p.getName()); 
 		
-		Random t = new Random();
-		int day = 2 + t.nextInt(6);
+		Cart crt = cartDAO.getByUserandProduct(p.getName(), productid);
 		
-		cart.setUserid(user.getUserid());
-		cart.setUsername(user.getUsername());
-		cart.setMailid(p.getName());
-		cart.setProductid(product.getProductid());
-		cart.setProductName(product.getProductName());
-		cart.setQuantity(1);
-		cart.setPrice(product.getPrice());
-	    cart.setTotal(cart.getPrice()*cart.getQuantity());
-	    cart.setStatus("N");
-	    cart.setDays(day);
+		if (product.getStock() > 0){
+			
+			if(cartDAO.itemAlreadyExist(p.getName(), productid, true)){
+				
+			int qty = crt.getQuantity() + 1;
+			crt.setQuantity(qty);
+			crt.setTotal(product.getPrice()*qty);
+			cartDAO.saveOrUpdate(crt);
+				
+			}
+			else {
+				
 		
-	cartDAO.saveOrUpdate(cart);
+			
+			Random t = new Random();
+			int day = 2 + t.nextInt(6);
+			
+			cart.setUserid(user.getUserid());
+			cart.setName(user.getName());
+			cart.setMailid(p.getName());
+			cart.setProductid(product.getProductid());
+			cart.setProductName(product.getProductName());
+			cart.setQuantity(1);
+			cart.setPrice(product.getPrice());
+		    cart.setTotal(cart.getPrice()*cart.getQuantity());
+		    cart.setStatus("N");
+		    cart.setDays(day);
+			
+		cartDAO.saveOrUpdate(cart);
+			}
 		return "redirect:mycart";
-		
+
+		}
+		else{
+			model.addAttribute("product", product);
+			model.addAttribute("productdescription", true);
+			model.addAttribute("msg", "Out of Stock");
+			return "Usersignin";
+		}
+				
 	}
 
 	@RequestMapping("productdescription")

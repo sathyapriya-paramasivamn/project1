@@ -300,7 +300,7 @@ $input.blur(function (e) {
 				<c:if test="${not empty logout}">
 			<div class="msg"><b>${logout}</b></div>
 				</c:if>				
-				<b>${message}</b>
+				<b style="color: white;">${message}</b>
     <div class="form-footer">
       <div class="clearfix">
        <button type="submit">Login</a></button>

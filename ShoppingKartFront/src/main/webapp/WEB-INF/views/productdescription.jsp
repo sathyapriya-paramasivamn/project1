@@ -28,6 +28,7 @@
 <td>
 <img src="resources/images/products/${product.productid}.jpg" width="550" height="550">
 </td>
+<td style="color: red;"><h2>${msg }</h2></td>
 <td><button class="button"><a href="addToCart?productId=${product.productid}">ADDTOCART</a></button></td>
 <br> 
 <td><button class="button">GOBACK</button></td>

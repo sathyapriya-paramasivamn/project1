@@ -40,19 +40,29 @@ public class UserController {
 	
 	@Autowired
 	private BillingDAO billingDAO;
-	
 
 	@RequestMapping("addUser")
 	public String addCategory(@ModelAttribute User user, @ModelAttribute Shipping shipping, @ModelAttribute Billing billing, Model model){
+		String message;
 		
+		if(userDAO.isAllReadyRegister(user.getMailid(), true)){
+			
+			message = "EmailId already registered!!! you must login!!!";
+			
+			
+		}
+		else{
+			
+	
 		user.setEnabled(true);
 		role.setMailid(user.getMailid());
 		role.setRole("ROLE_USER");
-		role.setUsername(user.getUsername());
+		role.setName(user.getName());
 		
 		
 		user.setRole(role);
-		role.setUser(user);		
+		role.setUser(user);	
+		
 		userDAO.saveOrUpdate(user);
 		roleDAO.saveOrUpdate(role);
 		
@@ -61,9 +71,10 @@ public class UserController {
 		
 		billing.setUserid(user.getUserid());
 		billingDAO.saveOrUpdate(billing);
-		
+		message = "successfully Registered";
+		}
 		model.addAttribute("loginButtonClicked", true);
-		model.addAttribute("message", "Regieted");
+		
 		return "home";
 }
 	
@@ -92,7 +103,6 @@ public class UserController {
 			model.addAttribute("error", "Invalid username or password!");
 			return "home";
 		}
-		
 		
 	}
 	

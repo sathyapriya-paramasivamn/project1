@@ -66,15 +66,18 @@ public class HomeController {
 	}
 	
 	@RequestMapping("newUser")
-	public String newUser(){
-		
-		return "signup";
+	public String newUser(Model model){
+		model.addAttribute("signupButtonClicked", true);
+		return "home";
 }
 	@RequestMapping("newCart")
 	public String newCart(){
 		
 		return "cartform";
 	}
+
+	
+	
 	@RequestMapping("signin")
 	public String signin(Model model){
 		model.addAttribute("loginButtonClicked", true);

@@ -11,7 +11,7 @@
 <legend> category</legend>
 <form action="addCart">
   username:<br>
-  <input type="text" name="username"><br>
+  <input type="text" name="name"><br>
   productName:<br>
   <input type="text" name="productName"><br>
     price:<br>

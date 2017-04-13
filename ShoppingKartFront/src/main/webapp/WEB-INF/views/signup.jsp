@@ -46,12 +46,12 @@ h2 {
   color: rgba(255, 255, 255, .4);
 }
 
-/*  .container {
-  max-width: 320px;
+/* .container {
+  max-width: 200px;
   margin: 0 auto;
   padding: 20px 16px 40px 16px;
   
-  text-align: center;
+  text-align: left;
 }
  */
 .form-footer {
@@ -150,7 +150,7 @@ h2 {
     }
     
     span::after {
-      //color: #4A90E2;
+      color: #464a4f;
       background-image: linear-gradient(to right,
       rgba(255,255,255,1) 50%,
       rgba(255,255,255,0) 0%);
@@ -249,10 +249,10 @@ h2 {
 }
 
 .__first { animation-delay: 0; }
-.__second { animation-delay: 80ms; }
-.__third { animation-delay: 100ms; }
-.__fourth { animation-delay: 1800ms;}
-.__fivth { animation-delay: 1800ms; }
+.__second { animation-delay: 40ms; }
+.__third { animation-delay: 60ms; }
+.__fourth { animation-delay: 800ms;}
+.__fivth { animation-delay: 100ms; }
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -283,7 +283,7 @@ $input.blur(function (e) {
   
   <form action="addUser"  style="width: 250px" method="post">    
     <fieldset class="form-fieldset ui-input __first">
-      <input type="text" name="username" tabindex="0" />
+      <input type="text" name="name" tabindex="0" />
       <label for="username">
         <span >Username</span>
       </label>

@@ -16,9 +16,9 @@
 <table align="center"  cellspacing="10">
 <tr><td>  name:</td>
  <td> <input type="text" name="name"></td></tr>
-<tr><td>   phoneNo:</td>
-  <td><input type="text" name="phoneNo"></td></tr>
-  <tr><td>  emailId:</td><td><input type="text" name="emailId"></td></tr>
+<tr><td>   mobileno:</td>
+  <td><input type="text" name="mobileno"></td></tr>
+  <tr><td>  emailId:</td><td><input type="text" name="mailid"></td></tr>
   <tr><td> address:</td><td><input type="text" name="address"></td></tr>
   <tr><td><input type="submit" name="submit" value="new supplier"></td></tr>
   </table>

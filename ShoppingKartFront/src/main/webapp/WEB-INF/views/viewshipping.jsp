@@ -6,17 +6,25 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+
+<style type="text/css">
+.box{
+    width: 300px;
+    border: 2px solid blue;
+    padding: 2px;
+    margin:35px;
+}
+</style>
 </head>
-<body>
-center>List Of Shipping</center>
-<table cellspacing="10">
+
+<body> <center>List Of Shipping</center>
+<%-- <table cellspacing="10">
 <tr>
 <th>S.No</th>
-<th>Shipping id</th>
-<th></th>
-<th>r</th>
-<th></th>
-<th></th>
+<th>Shippingid</th>
+<th>name</th>
+<th>mobileno</th>
+<th>address</th>
 <th>EDIT</th>
 <th> DELETE</th>
 </tr>
@@ -25,13 +33,33 @@ center>List Of Shipping</center>
 <td>${status.count}</td>
 <td>${shipping.shippingid}</td>
 <td>${shipping.name}</td>
-<td>${shipping.phoneNo}</td>
-<td>${shipping.mailid}</td>
+<td>${shipping.mobileno}</td>
 <td>${shipping.address}</td>
 <td><a href="editShipping?shippingId=${shipping.shippingid}">EDIT</a></td>
 <td><a href="deleteShipping?shippingId=${shipping.shippingid}">DELETE</a></td>
 </tr>
 </c:forEach>
 </table>
-</body>
+ --%>
+ <a href="newshipping"><button>CREATE NEW ADDRESS </button></a>
+ <div class="box">
+ <c:forEach items="${shippingList}" var="shipping" varStatus="status">
+<h4></h4> ${status.count}<br>
+${shipping.shippingid}<br>
+${shipping.name}<br>
+${shipping.mobileno}<br>
+${shipping.address}<br>
+<a href="editShipping?shippingId=${shipping.shippingid}">EDIT</a>
+<a href="deleteShipping?shippingId=${shipping.shippingid}">DELETE</a></h4>
+</c:forEach>
+ 
+ 
+ 
+ 
+ 
+ </div>
+ 
+ 
+ 
+ </body>
 </html>

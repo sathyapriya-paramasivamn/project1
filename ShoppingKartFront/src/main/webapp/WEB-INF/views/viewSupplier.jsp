@@ -25,7 +25,7 @@
 <td>${status.count}</td>
 <td>${supplier.supplierid}</td>
 <td>${supplier.name}</td>
-<td>${supplier.phoneNo}</td>
+<td>${supplier.mobileno}</td>
 <td>${supplier.emailId}</td>
 <td>${supplier.address}</td>
 <td><a href="editSupplier?supplierId=${supplier.supplierid}">EDIT</a></td>
