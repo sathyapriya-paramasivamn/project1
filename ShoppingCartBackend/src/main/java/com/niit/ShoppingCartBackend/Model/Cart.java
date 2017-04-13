@@ -23,10 +23,19 @@ public class Cart {
 	private String cartid;
 	
 	private String userid;
-	private String username;
+	private String name;
 	private String mailid;
 	private String productName;
 	private String productid;
+	private int price;
+	private int total;
+	private int quantity;
+	private String status;
+	private int days;
+	@Generated(value = {""})
+	@Temporal(javax.persistence.TemporalType.DATE)
+	private Date addDate = new java.sql.Date(new java.util.Date().getTime());
+	
 	public int getPrice() {
 		return price;
 	}
@@ -57,14 +66,6 @@ public class Cart {
 	public void setAddDate(Date addDate) {
 		this.addDate = addDate;
 	}
-	private int price;
-	private int total;
-	private int quantity;
-	private String status;
-	private int days;
-	@Generated(value = {""})
-	@Temporal(javax.persistence.TemporalType.DATE)
-	private Date addDate = new java.sql.Date(new java.util.Date().getTime());
 	
 	public String getCartid() {
 		return cartid;
@@ -78,11 +79,12 @@ public class Cart {
 	public void setUserid(String userid) {
 		this.userid = userid;
 	}
-	public String getUsername() {
-		return username;
+	
+	public String getName() {
+		return name;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getMailid() {
 		return mailid;

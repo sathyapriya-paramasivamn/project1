@@ -15,8 +15,8 @@ public class Billing {
 	@GeneratedValue
 	private String billingid; 
 	private String userid;
-	private String username;
-	private String phoneNo;
+	private String name;
+	private String mobileno;
 	private String mailid;
 	private String address;
 	public String getBillingid() {
@@ -31,17 +31,18 @@ public class Billing {
 	public void setUserid(String userid) {
 		this.userid = userid;
 	}
-	public String getUsername() {
-		return username;
+	
+	public String getName() {
+		return name;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getPhoneNo() {
-		return phoneNo;
+	public String getMobileno() {
+		return mobileno;
 	}
-	public void setPhoneNo(String phoneNo) {
-		this.phoneNo = phoneNo;
+	public void setMobileno(String mobileno) {
+		this.mobileno = mobileno;
 	}
 	public String getMailid() {
 		return mailid;

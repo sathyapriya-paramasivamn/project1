@@ -20,7 +20,7 @@ public class User {
 	@GeneratedValue
 	private String userid;
 	
-	private String username;
+	private String name;
 	private String mailid;
 	private String password;
 	private String address;
@@ -64,11 +64,12 @@ public class User {
 	public void setUserid(String userid) {
 		this.userid = userid;
 	}
-	public String getUsername() {
-		return username;
+	
+	public String getName() {
+		return name;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getMailid() {
 		return mailid;

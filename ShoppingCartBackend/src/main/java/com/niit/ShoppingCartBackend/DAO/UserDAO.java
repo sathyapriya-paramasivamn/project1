@@ -14,4 +14,6 @@ public interface UserDAO {
 	public void saveOrUpdate(User user);
 
 	public void delete(String userid);
+	
+	public boolean isAllReadyRegister(String mailid, boolean b);
 }

@@ -17,7 +17,7 @@ public class Supplier {
 
 	private String supplierid;
 	private String name;
-	private long phoneNo;
+	private String mobileno;
 	private String emailId;
 	private String address;
 
@@ -34,11 +34,13 @@ public class Supplier {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public long getPhoneNo() {
-		return phoneNo;
+	
+	
+	public String getMobileno() {
+		return mobileno;
 	}
-	public void setPhoneNo(long phoneNo) {
-		this.phoneNo = phoneNo;
+	public void setMobileno(String mobileno) {
+		this.mobileno = mobileno;
 	}
 	public String getEmailId() {
 		return emailId;

@@ -15,4 +15,7 @@ public interface CartDAO {
 
 	public void delete(String cartid);
 
+	public boolean itemAlreadyExist(String mailid, String productid, boolean b);
+
+	public Cart getByUserandProduct(String mailid, String productid);
 }

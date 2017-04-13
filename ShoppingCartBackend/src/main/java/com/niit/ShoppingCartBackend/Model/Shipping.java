@@ -15,10 +15,10 @@ public class Shipping {
 	@GeneratedValue
 	private String shippingid; 
 	private String userid;
-	private String username;
+	private String name;
 	
 	
-	private String phoneNo;
+	private String mobileno;
 	private String mailid;
 	private String address;
 	public String getMailid() {
@@ -37,14 +37,15 @@ public class Shipping {
 	public void setUserid(String userid) {
 		this.userid = userid;
 	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
 	
 	
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public String getShippingid() {
 		return shippingid;
 	}
@@ -52,11 +53,12 @@ public class Shipping {
 		this.shippingid = shippingid;
 	}
 	
-	public String getPhoneNo() {
-		return phoneNo;
+	
+	public String getMobileno() {
+		return mobileno;
 	}
-	public void setPhoneNo(String phoneNo) {
-		this.phoneNo = phoneNo;
+	public void setMobileno(String mobileno) {
+		this.mobileno = mobileno;
 	}
 	public String getAddress() {
 		return address;

@@ -14,6 +14,6 @@ public List<Billing> list();
 	public List<Billing> getMailid(String mailid); 
 	public void saveOrUpdate(Billing billing);
 	
-	public void delete(String billingid);;
+	public void delete(String billingid);
 
 }

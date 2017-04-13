@@ -60,5 +60,17 @@ public class UserDAOImpl implements UserDAO {
 		}
 		return null;
 	}
+	@Transactional
+	public boolean isAllReadyRegister(String mailid, boolean b) {
+		String hql = "from User where mailid ='"+ mailid +"'";
+		
+		
+		org.hibernate.Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		@SuppressWarnings("unchecked")
+		List<User> list = (List<User>) query.list();
+		if (list != null && !list.isEmpty()) {
+			return true;
+		}
+		return false;	}
 
 }
