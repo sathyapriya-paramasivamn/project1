@@ -19,9 +19,10 @@ public class Billing {
 	private String mobileno;
 	private String mailid;
 	private String address;
+ 
 	public String getBillingid() {
 		return billingid;
-	}
+	}   
 	public void setBillingid(String billingid) {
 		this.billingid = billingid;
 	}
@@ -56,6 +57,7 @@ public class Billing {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	
 	
 	
 	

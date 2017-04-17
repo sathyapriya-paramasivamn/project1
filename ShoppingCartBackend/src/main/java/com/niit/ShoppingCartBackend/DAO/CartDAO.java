@@ -18,4 +18,6 @@ public interface CartDAO {
 	public boolean itemAlreadyExist(String mailid, String productid, boolean b);
 
 	public Cart getByUserandProduct(String mailid, String productid);
+	
+	public Long getTotal(String cartid);
 }

@@ -31,7 +31,7 @@ public class Product {
 	
 	private int price;
 	
-	
+	   
 
 	private int Stock;
 	@Transient
@@ -101,6 +101,5 @@ public class Product {
 	public void setStock(int stock) {
 		Stock = stock;
 	}
-	
 
 }

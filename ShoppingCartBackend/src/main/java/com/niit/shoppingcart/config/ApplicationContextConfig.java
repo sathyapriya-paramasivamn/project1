@@ -18,12 +18,12 @@ import com.niit.ShoppingCartBackend.DAO.CartDAO;
 import com.niit.ShoppingCartBackend.DAO.CartDAOImpl;
 import com.niit.ShoppingCartBackend.DAO.CategoryDAO;
 import com.niit.ShoppingCartBackend.DAO.CategoryDAOImpl;
-import com.niit.ShoppingCartBackend.DAO.ProductDAO;
+import com.niit.ShoppingCartBackend.DAO.ProductDAO;  
 import com.niit.ShoppingCartBackend.DAO.ProductDAOImpl;
 import com.niit.ShoppingCartBackend.DAO.RoleDAO;
 import com.niit.ShoppingCartBackend.DAO.RoleDAOImpl;
 import com.niit.ShoppingCartBackend.DAO.SupplierDAO;
-import com.niit.ShoppingCartBackend.DAO.SupplierDAOImpl;
+import com.niit.ShoppingCartBackend.DAO.SupplierDAOImpl;   
 import com.niit.ShoppingCartBackend.DAO.UserDAO;
 import com.niit.ShoppingCartBackend.DAO.UserDAOImpl;
 import com.niit.ShoppingCartBackend.Model.Billing;
@@ -34,6 +34,7 @@ import com.niit.ShoppingCartBackend.Model.Role;
 import com.niit.ShoppingCartBackend.Model.Shipping;
 import com.niit.ShoppingCartBackend.Model.Supplier;
 import com.niit.ShoppingCartBackend.Model.User;
+
 
 @Configuration
 @ComponentScan("com.niit.*")
@@ -113,7 +114,7 @@ public class ApplicationContextConfig {
 	public CartDAO getCartDAO(SessionFactory sessionFactory) {
 		return new CartDAOImpl(sessionFactory);
 	}
-	
+	  
 	@Autowired(required = true)
 	@Bean(name = "SupplierDAO")
 	public SupplierDAO getSupplierDAO(SessionFactory sessionFactory) {

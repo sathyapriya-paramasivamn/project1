@@ -31,7 +31,7 @@ public CartDAOImpl(SessionFactory sessionFactory) {
 	public Cart get(String cartid) {
 	String hql = "from Cart where cartid ='" + cartid + "'";
 	Query query = (Query) sessionFactory.getCurrentSession().createQuery(hql);
-
+  
 	@SuppressWarnings("unchecked")
 	List<Cart> listCart = (List<Cart>) (query).list();
 
@@ -73,8 +73,6 @@ public boolean itemAlreadyExist(String mailid, String productId, boolean b) {
 	}
 	return false;
 }
-
-
 @Transactional
 public Cart getByUserandProduct(String mailid, String productId) {
 	String hql = "from Cart where mailid= '" + mailid + "' and " + " productid ='" + productId+"'";
@@ -87,4 +85,14 @@ public Cart getByUserandProduct(String mailid, String productId) {
 	}
 	return null;
 }
-	}
+
+@Transactional
+public Long getTotal(String cartid) {
+	String hql = "select sum(total) from Cart where mailid = " + "'" + cartid + "'" + "and status = '" + "N" +"'";
+	Query query = sessionFactory.getCurrentSession().createQuery(hql);
+   Long sum = (Long) query.uniqueResult();
+	return sum;
+}
+
+
+}

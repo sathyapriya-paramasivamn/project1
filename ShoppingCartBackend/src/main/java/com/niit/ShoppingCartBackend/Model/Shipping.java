@@ -30,7 +30,7 @@ public class Shipping {
 	public void setShippingid(String shippingid) {
 		this.shippingid = shippingid;
 	}
-	
+	   
 	public String getUserid() {
 		return userid;
 	}

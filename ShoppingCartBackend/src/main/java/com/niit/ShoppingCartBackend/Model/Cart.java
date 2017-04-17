@@ -21,7 +21,6 @@ public class Cart {
 	@Column(name="cartid")
 	@GeneratedValue
 	private String cartid;
-	
 	private String userid;
 	private String name;
 	private String mailid;
@@ -32,6 +31,7 @@ public class Cart {
 	private int quantity;
 	private String status;
 	private int days;
+	private String shippingid;
 	@Generated(value = {""})
 	@Temporal(javax.persistence.TemporalType.DATE)
 	private Date addDate = new java.sql.Date(new java.util.Date().getTime());
@@ -112,6 +112,12 @@ public class Cart {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public String getShippingid() {
+		return shippingid;
+	}
+	public void setShippingid(String shippingid) {
+		this.shippingid = shippingid;
 	}
 	
 

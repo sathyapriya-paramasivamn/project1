@@ -2,6 +2,8 @@ package com.niit.shoppingcartbackend;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+
+
 import com.niit.ShoppingCartBackend.DAO.BillingDAO;
 import com.niit.ShoppingCartBackend.DAO.CartDAO;
 import com.niit.ShoppingCartBackend.DAO.CategoryDAO;
@@ -18,7 +20,7 @@ import com.niit.ShoppingCartBackend.Model.Role;
 import com.niit.ShoppingCartBackend.Model.Shipping;
 import com.niit.ShoppingCartBackend.Model.Supplier;
 import com.niit.ShoppingCartBackend.Model.User;
-
+   
 public class CategoryTest {
 	public static void main (String[] args) {
 
@@ -92,12 +94,11 @@ public class CategoryTest {
 		shipping.setMobileno("9876543434");
         shipping.setAddress("12,ramnagar,pollachi");
 		
-       /* billing.setUsername("sara");*/
+       
         billing.setMailid("sara23@gmaill.com");
         billing.setMobileno("8765432321");
         billing.setAddress("12,ramnagar,pollachi");
 		
-        
         
 		categoryDAO.saveOrUpdate(category);
 		productDAO.saveOrUpdate(product);
@@ -109,7 +110,7 @@ public class CategoryTest {
 	
 	
 	
-	}
+	}   
 
 
 }

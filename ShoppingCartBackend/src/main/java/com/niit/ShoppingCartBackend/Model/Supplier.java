@@ -21,7 +21,7 @@ public class Supplier {
 	private String emailId;
 	private String address;
 
-	
+	  
 	public String getSupplierid() {
 		return supplierid;
 	}
@@ -35,7 +35,7 @@ public class Supplier {
 		this.name = name;
 	}
 	
-	
+	   
 	public String getMobileno() {
 		return mobileno;
 	}
