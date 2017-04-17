@@ -14,7 +14,7 @@
 	margin-top:1px;
 }
 .slider-wrapper {
-	width: 100%;
+	width: 95%;
 	height: 250px;
 	position:relative;
 	padding-left: 20spx;  
@@ -23,7 +23,7 @@
 .slide {
 	float: right;
 	position: absolute;
-	width: 100%; 
+	width: 95%; 
 	height: 100%;
 	opacity: 0;
 	transition: opacity 3s linear;

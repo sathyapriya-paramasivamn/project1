@@ -5,37 +5,123 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-
+<title>Product form</title>
+<script type="text/javascript">
+	function formProduct() {
+		// Make quick references to our fields
+		var productName = document.getElementById('productName');
+		var productdescription = document.getElementById('productdescription');
+		var category = document.getElementById('category');
+		var supplier = document.getElementById('supplier');
+		var price = document.getElementById('price');
+		var Stock = document.getElementById('Stock');
+		var file = document.getElementById('file');
+		
+		
+		if (notEmpty(productName, "productName Should not be empty")) {
+			if (isAlphabet(productName, "Please enter only letters for productName")) {
+				if (notEmpty(productdescription, "productdescription Should not be empty")) {
+					if (isAlphanumeric(productdescription, "productdescription Should not be empty")) {
+					   if (notEmpty(category, "category Should not be empty")) {
+						 if (notEmpty(supplier, "supplier Should not be empty")) {
+							if (notEmpty(price,"price Should not be empty")) {
+									if (isNumeric(price,"Please enter only numbers for price")) {
+										if (notEmpty(Stock,"Stock Should not be empty")) {
+											if (isNumeric(Stock,"Please enter only numbers for Stock")) {
+												if (notEmpty(file,"file Should not be empty")) {
+												
+										return true;
+		           							}
+											}
+					        			}
+							       }
+						       }
+					       }
+				      }
+			      }
+		       }
+			}
+		}
+		return false;
+	}
+	function notEmpty(elem, helperMsg) {
+		if (elem.value.length == 0) {
+			alert(helperMsg);
+			elem.focus(); // set the focus to this input
+			return false;
+		}
+		return true;
+	}
+	function isAlphabet(elem, helperMsg) {
+		var alphaExp = /^[a-z A-Z]+$/;
+		if (elem.value.match(alphaExp)) {
+			return true;
+		} else {
+			alert(helperMsg);
+			elem.focus();
+			return false;
+		}
+	}
+	function emailValidator(elem, helperMsg) {
+		var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+		if (elem.value.match(emailExp)) {
+			return true;
+		} else {
+			alert(helperMsg);
+			elem.focus();
+			return false;
+		}
+	}
+	function isAlphanumeric(elem, helperMsg) {
+		var alphaExp = /^[0-9a-zA-Z]+$/;
+		if (elem.value.match(alphaExp)) {
+			return true;
+		} else {
+			alert(helperMsg);
+			elem.focus();
+			return false;
+		}
+	}
+	function isNumeric(elem, helperMsg) {
+		var numericExpression = /^[0-9]+$/;
+		if (elem.value.match(numericExpression)) {
+			return true;
+		} else {
+			alert(helperMsg);
+			elem.focus();
+			return false;
+		}
+	}
+</script>
 </head>
 <body>
 <fieldset>
 <legend>Product</legend>
-   <form action="addProduct" method="post" enctype="multipart/form-data">
+   <form name="ProductForm"  action="addProduct" onsubmit="return formProduct()" method="post" enctype="multipart/form-data">
    <table align="center" >
    
   <tr><td>product Name:</td>
-  <td><input class="form-control" type="text" name="productName"></td></tr>
+  <td><input class="form-control" type="text" name="productName" Id="productName"></td></tr>
  <tr><td> Product Description:</td>
- <td><input class="form-control" type="text" name="productdescription"></td></tr>
- <tr><td>  Category:</td><td><select name="category">
+ <td><input class="form-control" type="text" name="productdescription" Id="productdescription"></td></tr>
+ <tr><td>  Category:</td><td><select name="category" Id="category">
    <option value="">select your category</option>
    	<c:forEach items="${categoryList}" var="category">
 <option value="${category.categoryName}">${category.categoryName}</option>
 </c:forEach>
 </select></td></tr>
-<tr><td>Supplier:</td><td><select name="supplier">
+<tr><td>Supplier:</td><td><select name="supplier" Id="supplier">
    <option value="">select your supplier</option>
    <c:forEach items="${supplierList}" var="supplier">	
    <option value="${supplier.name}">${supplier.name}</option>
    </c:forEach>
 </select></td></tr>
 <tr><td>Price:</td><td>
-<input class="form-control" type="text" name="price"></td></tr>
+<input class="form-control" type="text" name="price" Id="price"></td></tr>
 <tr><td>stock:</td><td>
-<input class="form-control" type="text" name="Stock"></td></tr>
+<input class="form-control" type="text" name="Stock" Id="Stock"></td></tr>
 <tr><td>file to upload:</td><td>
-<input class="form-control" type="file" name="file"></td></tr>
+<input class="form-control" type="file" name="file" Id="file"></td></tr>
 
 <tr><td><input type="submit" name="submit" value="new product"></td></tr>
 
@@ -43,4 +129,3 @@
 </form>
 </fieldset>
 </body>
-</html>

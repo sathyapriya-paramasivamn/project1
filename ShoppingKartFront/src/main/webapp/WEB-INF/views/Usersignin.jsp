@@ -210,6 +210,9 @@ function showSlides(n) {
 <c:when test="${not empty EditShippingClicked}">
    <%@include file="/WEB-INF/views/EditShipping.jsp" %>
 </c:when>
+<c:when test="${not empty deliveryaddress}">
+   <%@include file="/WEB-INF/views/successmsg.jsp" %>
+</c:when>
 <c:otherwise><%@include file="/WEB-INF/views/productList.jsp" %>
      </c:otherwise>
 </c:choose>

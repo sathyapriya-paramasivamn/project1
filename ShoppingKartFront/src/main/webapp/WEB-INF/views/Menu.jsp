@@ -7,8 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 <style>
-<
-link rel ="text/stylesheet">header {
+<link rel ="text/stylesheet">
+header {
 	height: 70px;
 	width: 10%;
 	position: absolute;
@@ -225,16 +225,11 @@ input[type=text]:focus {
 									</div>
 								</a>
 
-								<li>
-									<form>
-										<input type="text" name="search" placeholder="Search..">
-									</form>
-								</li>
 								<li>Welcome ${pageContext.request.userPrincipal.name}</li>
 
 							</div></li>
 		</ul>
 	</div>
 	</header>
-</body>
+</body>  
 </html>

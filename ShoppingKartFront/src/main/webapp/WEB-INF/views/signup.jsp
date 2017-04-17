@@ -272,50 +272,124 @@ var $input = $('.form-fieldset > input');
 $input.blur(function (e) {
   $(this).toggleClass('filled', !!$(this).val());
 });
-
-
+function formSignup() {
+	var name= document.getElementById('name');
+	var mailid= document.getElementById('mailid');
+	var mobilenumber= document.getElementById('mobilenumber');
+	var address= document.getElementById('address');
+	var password= document.getElementById('password');
+	if (notEmpty(name, "name Should not be empty")) {
+		if (isAlphabet(name, "Please enter only characters for name"))
+	if (notEmpty(mailid, "mailid Should not be empty")) {
+		if (emailValidator(mailid, "Please enter only validmail for mailid")) {
+			if (notEmpty(mobilenumber, "mobilenumber Should not be empty")) {
+				if (isNumeric(mobilenumber, "Please enter only valid number for mobilenumber")) {
+					if (notEmpty(address, "address Should not be empty")) {
+						if (isAlphanumeric(address, "Please enter only charcters and numbers for address")) {
+			              if (notEmpty(password, "Description Should not be empty")) {
+				              if (isAlphanumeric(password, "Please enter only letters and characters for password")) {
+				return true;
+			}  
+		}
+	}
+}
+				}
+			}
+		}
+	}
+	
+}
+	return false;
+}
+function notEmpty(elem, helperMsg) {
+	if (elem.value.length == 0) {
+		alert(helperMsg);
+		elem.focus(); // set the focus to this input
+		return false;
+	}
+	return true;
+}
+function isNumeric(elem, helperMsg) {
+	var numericExpression = /^[0-9]+$/;
+	if (elem.value.match(numericExpression)) {
+		return true;
+	} else {
+		alert(helperMsg);
+		elem.focus();
+		return false;
+	}
+}
+function isAlphabet(elem, helperMsg) {
+	var alphaExp = /^[a-z A-Z]+$/;
+	if (elem.value.match(alphaExp)) {
+		return true;
+	} else {
+		alert(helperMsg);
+		elem.focus();
+		return false;
+	}
+}
+function isAlphanumeric(elem, helperMsg) {
+	var alphaExp = /^[0-9a-zA-Z]+$/;
+	if (elem.value.match(alphaExp)) {
+		return true;
+	} else {
+		alert(helperMsg);
+		elem.focus();
+		return false;
+	}
+}
+function emailValidator(elem, helperMsg) {
+	var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+	if (elem.value.match(emailExp)) {
+		return true;
+	} else {
+		alert(helperMsg);
+		elem.focus();
+		return false;
+	}
+}
 </script>
 </head>
 <body>
 
 <!-- <div class="container" > -->
   <h1>fabcollection</h1>
-  
-  <form action="addUser"  style="width: 250px" method="post">    
+  <form name="signup" action="addUser" onsubmit="return formSignup()" style="width: 250px" method="post">    
     <fieldset class="form-fieldset ui-input __first">
-      <input type="text" name="name" tabindex="0" />
+      <input type="text" name="name" Id="name" tabindex="0" />
       <label for="username">
         <span >Username</span>
       </label>
     </fieldset>
     
     <fieldset class="form-fieldset ui-input __second">
-      <input type="text" name="mailid" tabindex="0" />
+      <input type="text" name="mailid" Id="mailid" tabindex="0" />
       <label for="mailid">
         <span >mailid</span>
       </label>
     </fieldset>
     
     <fieldset class="form-fieldset ui-input __third">
-      <input type="text" name="mobileno" />
+      <input type="text" name="mobileno" Id="mobilenumber" />
       <label for="mobilenumber">
         <span >Mobilenumber</span>
       </label>
     </fieldset>
     
     <fieldset class="form-fieldset ui-input __fourth">
-      <input type="text" name="address"/>
+      <input type="text" name="address" Id="address"/>
       <label for="address">
         <span >address</span>
       </label>
     </fieldset>
     <fieldset class="form-fieldset ui-input __fivth">
-      <input type="password" name="password" />
-      <label for="repeat-new-password">
+      <input type="password" name="password" Id="password"/>
+      <label for="new-password">
         <span >Password</span>
       </label>
     </fieldset>
-    
+       
     <div class="form-footer">
       <div class="clearfix">
       <button type="reset" name="cancel" value="reset"  class="cancelbtn">Cancel</button>

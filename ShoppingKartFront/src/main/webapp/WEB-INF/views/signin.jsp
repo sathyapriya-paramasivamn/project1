@@ -268,28 +268,56 @@ var $input = $('.form-fieldset > input');
 $input.blur(function (e) {
   $(this).toggleClass('filled', !!$(this).val());
 });
-
+function formSignin() {
+	// Make quick references to our fields
+	var mailid= document.getElementById('mailid');
+	var password= document.getElementById('password');
+	if (notEmpty(mailid, "mailid Should not be empty")) {
+		if (emailValidator(mailid, "Please enter only validmail for mailid")) {
+			if (notEmpty(password, "Description Should not be empty")) {
+				if (isAlphanumeric(password, "Please enter only letters and characters for password")) {
+				return true;
+			}  
+		}
+	}
+}
+	return false;
+}
+function notEmpty(elem, helperMsg) {
+	if (elem.value.length == 0) {
+		alert(helperMsg);
+		elem.focus();    
+		return false;
+	}
+	return true;
+}
+function emailValidator(elem, helperMsg) {
+	var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+	if (elem.value.match(emailExp)) {
+		return true;
+	} else {
+		alert(helperMsg);
+		elem.focus();
+		return false;
+	}
+}
+ 
 </script>
 </head>
 <body>
-
 <div class="container" >
   <h1>fabcollection</h1>
-  
-  <form action="signin" method="post">    
+  <form name="signin" action="signin" onsubmit="return formSignin()" method="post">    
     <h2> LOGIN</h2>
     
     <fieldset class="form-fieldset ui-input __first">
-      <input type="text" name="mailid" tabindex="0" />
+      <input type="text" name="mailid" Id="mailid" tabindex="0" />
       <label for="mailid">
         <span >mailid</span>
       </label>
     </fieldset>
-    
-    
-    
-    <fieldset class="form-fieldset ui-input __second">
-      <input type="password" name="password" />
+      <fieldset class="form-fieldset ui-input __second">
+      <input type="password" name="password" Id="password"/>
       <label for="password">
         <span >Password</span>
       </label>

@@ -62,7 +62,7 @@ public class HomeController {
 	@RequestMapping("home")
 	public String homePages(){
 		
-		return "main";
+		return "home";
 	}
 	
 	@RequestMapping("newUser")

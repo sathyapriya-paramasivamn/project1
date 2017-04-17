@@ -5,19 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<style type="text/css">
-/* div {
-    background-color: lightgrey;
-    width: 300px;
-    border: 25px lightgrey;
-    padding: 25px;
-    margin: 25px;
-} */
-
-
-</style>
 </head>
 <body>
+<center>My Cart</center>
 <center>List Of Cart</center>
 <table cellspacing="20">
 <tr>
@@ -45,10 +35,12 @@
 <td> Grand Total: </td>
 <td> ${total}</td> 
 </tr>
-<tr>
+<!-- <tr>
 <td><a href="proceed"><button>proceddelivery</button></a>
 </td>
-</tr>
+<td><a href="#"><button>grand total</button></a>
+</td>
+</tr> -->
 </table>
 </body>
 </html>

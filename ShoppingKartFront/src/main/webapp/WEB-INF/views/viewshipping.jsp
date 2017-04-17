@@ -13,6 +13,7 @@
     border: 2px solid blue;
     padding: 2px;
     margin:35px;
+    float:left;
 }
 </style>
 </head>
@@ -42,24 +43,17 @@
 </table>
  --%>
  <a href="newshipping"><button>CREATE NEW ADDRESS </button></a>
- <div class="box">
+ 
  <c:forEach items="${shippingList}" var="shipping" varStatus="status">
-<h4></h4> ${status.count}<br>
-${shipping.shippingid}<br>
+<div class="box">
+<h4>
 ${shipping.name}<br>
 ${shipping.mobileno}<br>
-${shipping.address}<br>
+${shipping.address}<br></h4>
 <a href="editShipping?shippingId=${shipping.shippingid}">EDIT</a>
-<a href="deleteShipping?shippingId=${shipping.shippingid}">DELETE</a></h4>
+<a href="deleteShipping?shippingId=${shipping.shippingid}">DELETE</a>
+<a href="deliveryaddress?shippingId=${shipping.shippingid}"><button>deliveryhere</button></a>
+</div>
 </c:forEach>
- 
- 
- 
- 
- 
- </div>
- 
- 
- 
- </body>
+</body>
 </html>

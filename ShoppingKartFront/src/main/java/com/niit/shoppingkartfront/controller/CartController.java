@@ -1,5 +1,4 @@
 package com.niit.shoppingkartfront.controller;
-
 import java.security.Principal;
 import java.util.List;
 import java.util.Random;
@@ -52,9 +51,7 @@ public class CartController {
 			}
 			else {
 				
-		
-			
-			Random t = new Random();
+		    Random t = new Random();
 			int day = 2 + t.nextInt(6);
 			
 			cart.setUserid(user.getUserid());
@@ -70,6 +67,11 @@ public class CartController {
 			
 		cartDAO.saveOrUpdate(cart);
 			}
+		int stc=product.getStock()-1;
+		product.setStock(stc);
+		productDAO.saveOrUpdate(product);
+			
+			
 		return "redirect:mycart";
 
 		}
@@ -97,18 +99,25 @@ public class CartController {
 	public String mycart(Principal principal, Model model) {
 		String email = principal.getName();
 		List<Cart> cartList = cartDAO.list(email);
+		Long sum=cartDAO.getTotal(email);  
+		model.addAttribute("total",sum);
 		model.addAttribute("cartList", cartList);
 		model.addAttribute("myKartClicked", true);
 		return "Usersignin";
-
-	}
+	  
 	
+	}
 	@RequestMapping("deleteCart")
 	public String deleteCart(@RequestParam("cartId") String cartId){
-		cartDAO.delete(cartId);
-		return "redirect:mycart";
+		Cart cart =cartDAO.get(cartId);
+		Product product = productDAO.get(cart.getProductid());		
 		
-	}
-	
-	
+		int qty=cart.getQuantity();
+		int stc=product.getStock();
+		product.setStock(stc+qty);
+		productDAO.saveOrUpdate(product);
+		cartDAO.delete(cartId);
+		
+		return "redirect:mycart";
+	}	
 }

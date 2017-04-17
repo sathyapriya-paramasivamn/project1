@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.niit.ShoppingCartBackend.DAO.CartDAO;
 import com.niit.ShoppingCartBackend.DAO.ShippingDAO;
 import com.niit.ShoppingCartBackend.DAO.UserDAO;
+import com.niit.ShoppingCartBackend.Model.Cart;
 import com.niit.ShoppingCartBackend.Model.Shipping;
 import com.niit.ShoppingCartBackend.Model.User;
 
@@ -22,7 +24,8 @@ public class ShippingController {
 	@Autowired
 	private UserDAO userDAO;
 	
-	
+	@Autowired
+	private CartDAO cartDAO;
 /*	
 public String addShipping(@ModelAttribute Shipping shipping){
 		
@@ -51,13 +54,17 @@ public String EditShipping(@RequestParam("shippingId") String shippingid, Model 
 @RequestMapping("deleteShipping")
 public String deleteShipping(@RequestParam("shippingId") String shippingId){
 	shippingDAO.delete(shippingId);
-	return "redirect:viewshipping";
+	return "redirect:proceed";
 	
 }
 @RequestMapping("newAddress")
-public String newAddress(Model model){
-	model.addAttribute("newShippingClicked", true);
-	return "Usersignin";
+public String newAddress(@ModelAttribute Shipping shipping, Principal p, Model model){
+User user = userDAO.getByMailId(p.getName());
+shipping.setMailid(p.getName());
+shipping.setUserid(user.getUserid());
+shippingDAO.saveOrUpdate(shipping);
+	
+	return "redirect:proceed";
 }
 @RequestMapping("afterEditShipping")
 public String AfterEdit(@ModelAttribute Shipping shipping, Principal p){
@@ -66,6 +73,7 @@ public String AfterEdit(@ModelAttribute Shipping shipping, Principal p){
 	shipping.setUserid(user.getUserid());
 	
 	shippingDAO.saveOrUpdate(shipping);
+	
 return "redirect:proceed";
 }
 @RequestMapping("newshipping")
@@ -73,7 +81,22 @@ public String newshipping(Model model){
 	model.addAttribute("newShippingClicked", true);
 	return "Usersignin";
 }
-
+@RequestMapping("deliveryaddress")
+public String deliverAdress(@RequestParam("shippingId") String shippingId, Principal p, Model model){
+	
+	String email  = p.getName();
+	
+	List<Cart> cartList = cartDAO.list(email);
+	
+	for(Cart crt : cartList){
+		crt.setShippingid(shippingId);
+		cartDAO.saveOrUpdate(crt);
+		
+	}
+	model.addAttribute("deliveryaddress", true);
+	
+	return "Usersignin";
+	
 }
 
-  
+}

@@ -20,8 +20,9 @@ public class SupplierController {
 	private SupplierDAO supplierDAO;
 	
 	@RequestMapping("addSupplier")
-	public String addSupplier(@ModelAttribute Supplier supplier){
+	public String addSupplier(@ModelAttribute Supplier supplier, Model model){
 		supplierDAO.saveOrUpdate(supplier);
+
 		return "redirect:ViewSupplier";
 		
 		
@@ -55,5 +56,5 @@ public class SupplierController {
 		
 	}
 
-
+      
 }
